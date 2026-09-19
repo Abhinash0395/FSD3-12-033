@@ -26,10 +26,14 @@ const readData = async (filename) => {
   try {
     const content = await readFile(filename, "utf-8");
     return content;
-  } catch (e) {
+  } 
+
+  catch (e) {
     console.log(e.message);
     console.log("file not found ");
-  } finally {
+  } 
+
+  finally {
     console.log("Read data finished ");
   }
 };
@@ -45,7 +49,9 @@ const appendData = async (filename, content) => {
 const deleteFile = async (filename) => {
   try {
     await unlinkSync(filename);
-  } catch (error) {
+  }
+   
+  catch (error) {
     console.log("file not found");
   }
 };
