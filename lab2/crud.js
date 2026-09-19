@@ -23,6 +23,7 @@ const getCart = async () => {
 
     return JSON.parse(data);
   } catch (error) {
+
     // If product.json doesn't exist
     await writeFile(FILE, "[]");
     return [];
@@ -36,13 +37,16 @@ const saveCart = async (myCart) => {
 
 // Add product
 const addToCart = async (product) => {
+
   const myCart = await getCart();
 
   const isFound = myCart.find((item) => item.id === product.id);
 
   if (isFound) {
     isFound.qty += product.qty;
-  } else {
+
+  }
+  else {
     myCart.push(product);
   }
 
@@ -53,6 +57,7 @@ const addToCart = async (product) => {
 
 // Show cart
 const showCart = async () => {
+  
   const data = await getCart();
 
   if (data.length === 0) {
