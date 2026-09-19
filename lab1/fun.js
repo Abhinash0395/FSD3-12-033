@@ -15,7 +15,6 @@ const toWords = (digit)=> {
 }
 console.log(toWords(8));
 
-
 // react frontend
 // VEW.js
 // FLASK
