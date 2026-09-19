@@ -5,6 +5,7 @@ const server = http.createServer((req, res) => {
     if(req.url=="/"){
         res.end("<h1>Home Page</h1>");
     }
+
     else if(req.url=="/"){
         res.write(`
             <h1>Iphone XL</h1>
@@ -13,15 +14,18 @@ const server = http.createServer((req, res) => {
         `);
         res.end();
     }
+
     else if(req.url === "/contact") {
         res.end("<h1>Contact Us");
     }
+
     else {
         res.statusCode = 404;
         res.end(`
             <h1>Page Not Found</h1>
             <a href="/"Home</a> `);
     }
+    
 });
 
 server.listen(3000, () => console.log("Server is running at 3000"));
