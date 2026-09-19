@@ -11,11 +11,14 @@ setTimeout, setInterval, setImmediate, nextTick
 - with promises
 - with event handlers
 
+
 # promise 
 - a function not executed immediately but it must be executed after a while it has some status during the execution at final it may [resolve() -> success]  [reject -> unsuccess]
 
+
 # call back function =>
 - that pass as argument or the parameter to another function
+
 
 ## Modern JS is of two types
 1. CommonJS (.cjs) -> supports OOPS -> require
