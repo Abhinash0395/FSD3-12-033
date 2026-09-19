@@ -5,16 +5,19 @@
     "price": 300,
     "qty": 5
   },
+
   {
     "id": 303,
     "name": "t-shirt",
     "price": 500,
     "qty": 30
   },
+
   {
     "id": 105,
     "name": "Jeans",
     "price": 1100,
     "qty": 9
   }
+  
 ]
