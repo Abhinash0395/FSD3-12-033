@@ -10,7 +10,8 @@ import {
 const server = http.createServer((req, res) => {
   if (req.url === "/api/users" && req.method === "GET") {
     res.end(JSON.stringify(getAllUsers()));
-  } else if (req.url === "/api/users" && req.method === "POST") {
+  } 
+  else if (req.url === "/api/users" && req.method === "POST") {
     let body = "";
     req.on("data", (chunk) => {
       body += chunk;
