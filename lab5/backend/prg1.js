@@ -5,11 +5,13 @@ const app = express();
 app.get("/",(req,res)=> {
     // res.send("Hello Express!");
     // res.send("<h1>Hello Express</h1>");
+
     res.send(`
         <h1>Hello Server</h1>
         <h2>I am responding from express framework</h2>
         <h3>The code is minimal and easy to return</h3>
         `);
+
 });
 
 app.get("/about",(req,res)=>{
@@ -23,6 +25,7 @@ app.get("/products",(req,res)=>{
         name: "Mobile",
         price: 25000,
     };
+    
     res.send(product);
 });
 
