@@ -12,4 +12,5 @@ console.log(`is syslink : ${fstat.isSymbolicLink()}`);
 
 console.log(`is create on : ${fstat.birthtime}`);
 
+
 console.log(`last used on : ${fstat.atime}`);
