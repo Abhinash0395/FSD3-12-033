@@ -320,6 +320,7 @@ export const products = [
         comment:
           "Transferring 4K video files takes seconds. Rugged rubberized shell makes it durable for travel.",
       },
+      
       {
         id: 902,
         reviewer: "Rachel Kim",
@@ -327,6 +328,7 @@ export const products = [
         comment:
           "Blazing fast speeds on USB-C. Tends to get warm under sustained 100GB+ transfers, but performance remains steady.",
       },
+
       {
         id: 903,
         reviewer: "Siddharth Nair",
@@ -336,6 +338,7 @@ export const products = [
       },
     ],
   },
+
   {
     id: 10,
     name: "Smart Ambient RGB Corner Floor Lamp",
