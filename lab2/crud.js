@@ -142,6 +142,7 @@ const main = async () => {
   } while (Number(choice) !== 5);
 
   cin.close();
+  
 };
 
 main();
