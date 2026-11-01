@@ -1,0 +1,2858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d19" />
+    <meta name="description"
+        content="BrightPath Academy offers live online coaching, inspiring teachers, personalized learning plans, and courses that help students reach their goals." />
+    <title>BrightPath Academy — Brighter Futures</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0b0d19;
+            --surface: #131629;
+            --surface-light: #1b1f35;
+            --surface-hover: #242943;
+            --text: #f4f2ff;
+            --muted: #a9afca;
+            --border: rgba(182, 177, 255, 0.16);
+            --purple: #8057ff;
+            --purple-light: #a18aff;
+            --pink: #e66bd1;
+            --coral: #ff7f91;
+            --lime: #d8ff72;
+            --teal: #63e4c4;
+            --radius: 22px;
+            --max-width: 1180px;
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+            background: var(--bg);
+        }
+
+        body {
+            min-width: 320px;
+            background:
+                radial-gradient(ellipse at 12% 0%, rgba(102, 68, 209, 0.14), transparent 32%),
+                radial-gradient(ellipse at 90% 26%, rgba(214, 81, 146, 0.08), transparent 28%),
+                var(--bg);
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body,
+        button,
+        input,
+        textarea,
+        select {
+            font-family: "DM Sans", sans-serif;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-size: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid var(--purple-light);
+            outline-offset: 4px;
+        }
+
+        .container {
+            width: min(var(--max-width), calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 42px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--purple-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 23px;
+            height: 2px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, var(--purple), var(--pink));
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            letter-spacing: -0.045em;
+            line-height: 1.15;
+        }
+
+        h2 {
+            font-size: clamp(32px, 4vw, 49px);
+            margin-bottom: 16px;
+        }
+
+        .section-heading>p,
+        .section-copy {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .gradient-text {
+            background: linear-gradient(105deg, #8d6aff 4%, #c56ce5 51%, #ff8191 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 47px;
+            padding: 12px 19px;
+            border: 1px solid transparent;
+            border-radius: 13px;
+            font-size: 13px;
+            font-weight: 800;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(115deg, #7851ff, #9856ec);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(128, 87, 255, .18);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 34px rgba(128, 87, 255, .34);
+        }
+
+        .btn-secondary {
+            color: var(--text);
+            background: rgba(255, 255, 255, .035);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-hover);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Navigation */
+
+        .topbar {
+            position: sticky;
+            z-index: 100;
+            top: 0;
+            background: rgba(11, 13, 25, .88);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text);
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            white-space: nowrap;
+        }
+
+        .brand-symbol {
+            font-size: 20px;
+            color: var(--purple-light);
+        }
+
+        .brand-dot {
+            color: var(--coral);
+        }
+
+        .navlinks {
+            display: flex;
+            align-items: center;
+            gap: clamp(14px, 2vw, 28px);
+        }
+
+        .navlinks a {
+            color: #a9afca;
+            font-size: 13px;
+            font-weight: 800;
+            transition: color .2s ease;
+        }
+
+        .navlinks a:hover,
+        .navlinks a.active {
+            color: var(--purple-light);
+        }
+
+        .nav-cta {
+            min-height: 44px;
+            padding-inline: 17px;
+            white-space: nowrap;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 43px;
+            height: 43px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--text);
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero */
+
+        .hero {
+            position: relative;
+            padding: 84px 0 62px;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            right: -170px;
+            top: -180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 83, 255, .17), transparent 68%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            max-width: 670px;
+            font-size: clamp(46px, 6vw, 76px);
+            line-height: 1.02;
+            letter-spacing: -.075em;
+            margin-bottom: 23px;
+        }
+
+        .hero h1 .line {
+            display: block;
+        }
+
+        .hero-description {
+            max-width: 560px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .hero-note-symbol {
+            color: var(--purple-light);
+            font-size: 19px;
+        }
+
+        .hero-note strong {
+            display: block;
+            color: var(--text);
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        /* Dashboard illustration */
+
+        .hero-visual {
+            min-height: 390px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            perspective: 1100px;
+        }
+
+        .glow-orb {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(133, 95, 255, .28), rgba(196, 88, 206, .08) 48%, transparent 72%);
+            filter: blur(6px);
+        }
+
+        .study-card {
+            position: relative;
+            width: min(100%, 330px);
+            padding: 27px 25px 24px;
+            background: linear-gradient(145deg, #20243a, #14172a);
+            border: 1px solid rgba(199, 187, 255, .25);
+            border-radius: 25px;
+            box-shadow: 0 35px 85px rgba(0, 0, 0, .4), 0 0 70px rgba(128, 87, 255, .12);
+            transform: rotate(-3deg);
+            z-index: 2;
+            animation: card-float 6s ease-in-out infinite;
+        }
+
+        @keyframes card-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+        }
+
+        .card-kicker {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .study-card h3 {
+            font-size: 17px;
+            letter-spacing: -.5px;
+            margin-bottom: 26px;
+        }
+
+        .subject-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .subject-row strong {
+            font-size: 13px;
+        }
+
+        .subject-subtitle {
+            color: var(--muted);
+            font-size: 10px;
+            margin-bottom: 20px;
+        }
+
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 11px;
+            margin-bottom: 8px;
+        }
+
+        .progress-meta strong {
+            color: var(--text);
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 7px;
+            overflow: hidden;
+            border-radius: 99px;
+            background: #2c304b;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 76%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--purple), #b86ee9);
+        }
+
+        .chart {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 8px;
+            height: 86px;
+            padding-top: 17px;
+            margin-bottom: 18px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            min-width: 0;
+            height: var(--height);
+            border-radius: 7px 7px 2px 2px;
+            background: linear-gradient(180deg, #d8ff72, #6ccca6);
+            box-shadow: 0 0 18px rgba(216, 255, 114, .07);
+            animation: grow-bar .9s ease both;
+            transform-origin: bottom;
+        }
+
+        @keyframes grow-bar {
+            from {
+                transform: scaleY(.15);
+                opacity: .4;
+            }
+
+            to {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+
+        .card-foot {
+            border-top: 1px solid var(--border);
+            padding-top: 13px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .floating-chip {
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 220px;
+            padding: 13px 15px;
+            background: #1b1e32;
+            border: 1px solid rgba(199, 187, 255, .23);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            animation: chip-float 5s ease-in-out infinite;
+        }
+
+        .floating-chip strong {
+            display: block;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .floating-chip span {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .chip-top {
+            top: 45px;
+            right: 0;
+        }
+
+        .chip-bottom {
+            bottom: 42px;
+            left: -12px;
+            animation-delay: -2.5s;
+        }
+
+        @keyframes chip-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        /* Stats */
+
+        .stats {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, .012);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat {
+            padding: 29px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: 0;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--purple-light);
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: clamp(24px, 3vw, 34px);
+            letter-spacing: -1.5px;
+            margin-bottom: 3px;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* Course cards */
+
+        .courses {
+            background: linear-gradient(180deg, transparent, rgba(30, 26, 57, .16), transparent);
+        }
+
+        .section-topline {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 24px;
+            margin-bottom: 35px;
+        }
+
+        .section-topline .section-heading {
+            margin-bottom: 0;
+        }
+
+        .course-tools {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 27px;
+        }
+
+        .course-search {
+            width: min(100%, 300px);
+            min-height: 43px;
+            padding: 10px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        .course-search::placeholder {
+            color: #858ba9;
+        }
+
+        .filter {
+            min-height: 42px;
+            padding: 9px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            transition: all .2s ease;
+        }
+
+        .filter:hover,
+        .filter.active {
+            color: #fff;
+            border-color: rgba(161, 138, 255, .65);
+            background: rgba(128, 87, 255, .17);
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .course-card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, rgba(27, 31, 53, .95), rgba(17, 20, 35, .98));
+            transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(161, 138, 255, .48);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .23);
+        }
+
+        .course-art {
+            height: 170px;
+            padding: 22px;
+            position: relative;
+            display: flex;
+            align-items: end;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .course-art::before,
+        .course-art::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .course-art::before {
+            width: 180px;
+            height: 180px;
+            top: -68px;
+            right: -18px;
+            border: 1px solid rgba(255, 255, 255, .19);
+            box-shadow: 0 0 0 18px rgba(255, 255, 255, .025), 0 0 0 38px rgba(255, 255, 255, .02);
+        }
+
+        .course-art::after {
+            width: 95px;
+            height: 95px;
+            bottom: -43px;
+            left: 38px;
+            background: rgba(255, 255, 255, .12);
+            filter: blur(2px);
+        }
+
+        .art-math {
+            background: linear-gradient(135deg, #5d3aaf, #ad5ac6);
+        }
+
+        .art-science {
+            background: linear-gradient(135deg, #087e8b, #42bba8);
+        }
+
+        .art-english {
+            background: linear-gradient(135deg, #bd4d70, #ef8c87);
+        }
+
+        .art-coding {
+            background: linear-gradient(135deg, #2d478e, #7278f4);
+        }
+
+        .art-exam {
+            background: linear-gradient(135deg, #9b6a19, #d8ad4b);
+        }
+
+        .art-creative {
+            background: linear-gradient(135deg, #7541a2, #e270b5);
+        }
+
+        .art-symbol {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            color: rgba(255, 255, 255, .8);
+            font-size: 51px;
+            font-weight: 800;
+            line-height: 1;
+            opacity: .8;
+        }
+
+        .art-label {
+            color: #fff;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .course-content {
+            padding: 22px;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 9px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--purple-light);
+            background: rgba(128, 87, 255, .1);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .rating {
+            color: #f4ce75;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .course-content h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .course-content>p {
+            min-height: 52px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .course-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 17px;
+            border-top: 1px solid var(--border);
+        }
+
+        .course-bottom strong {
+            font-size: 14px;
+        }
+
+        .course-bottom span {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .course-bottom .btn {
+            min-height: 38px;
+            padding: 8px 12px;
+            font-size: 11px;
+        }
+
+        .empty-state {
+            display: none;
+            color: var(--muted);
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        /* Learning process */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            position: relative;
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #191d31, #111424);
+        }
+
+        .process-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 14px;
+            margin-bottom: 23px;
+            background: rgba(128, 87, 255, .16);
+            border: 1px solid rgba(161, 138, 255, .2);
+            color: var(--purple-light);
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-weight: 800;
+        }
+
+        .process-card:nth-child(2) .process-number {
+            background: rgba(99, 228, 196, .1);
+            color: var(--teal);
+        }
+
+        .process-card:nth-child(3) .process-number {
+            background: rgba(255, 127, 145, .1);
+            color: var(--coral);
+        }
+
+        .process-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        /* About */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .about-art {
+            position: relative;
+            min-height: 400px;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at 50% 45%, rgba(128, 87, 255, .28), transparent 46%),
+                linear-gradient(145deg, #1a1c35, #111424);
+        }
+
+        .about-art::before,
+        .about-art::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(190, 177, 255, .19);
+            border-radius: 50%;
+        }
+
+        .about-art::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .about-art::after {
+            width: 220px;
+            height: 220px;
+        }
+
+        .about-center {
+            width: 145px;
+            height: 145px;
+            display: grid;
+            place-items: center;
+            border-radius: 38px;
+            transform: rotate(-8deg);
+            background: linear-gradient(145deg, #8159ff, #bd67db);
+            box-shadow: 0 24px 65px rgba(128, 87, 255, .3);
+            font-size: 58px;
+            z-index: 1;
+        }
+
+        .orbit-chip {
+            position: absolute;
+            z-index: 2;
+            padding: 12px 15px;
+            background: #20243a;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 800;
+            box-shadow: var(--shadow);
+        }
+
+        .orbit-one {
+            top: 65px;
+            left: 28px;
+        }
+
+        .orbit-two {
+            right: 22px;
+            top: 125px;
+        }
+
+        .orbit-three {
+            bottom: 57px;
+            left: 40px;
+        }
+
+        .about-copy h2 {
+            margin-bottom: 19px;
+        }
+
+        .about-copy>p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.95;
+            margin-bottom: 22px;
+        }
+
+        .check-list {
+            list-style: none;
+            display: grid;
+            gap: 13px;
+            margin-bottom: 26px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            color: #dfe0f2;
+            font-size: 13px;
+        }
+
+        .check {
+            display: grid;
+            place-items: center;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(99, 228, 196, .13);
+            color: var(--teal);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* Teachers */
+
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .teacher-card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #1b1f35, #121525);
+            transition: transform .25s ease, border-color .25s ease;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(161, 138, 255, .45);
+        }
+
+        .teacher-photo {
+            height: 230px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #29234b, #1b263f);
+        }
+
+        .teacher-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .teacher-card:hover .teacher-photo img {
+            transform: scale(1.045);
+        }
+
+        .teacher-info {
+            padding: 20px;
+        }
+
+        .teacher-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .teacher-info>p {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 13px;
+        }
+
+        .teacher-subjects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .teacher-subjects span {
+            padding: 5px 8px;
+            background: rgba(128, 87, 255, .1);
+            border: 1px solid rgba(161, 138, 255, .13);
+            color: #c7bcff;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        /* Pricing */
+
+        .pricing {
+            background: radial-gradient(ellipse at 50% 50%, rgba(128, 87, 255, .09), transparent 60%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .price-card {
+            position: relative;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #1b1f35, #121525);
+        }
+
+        .price-card.featured {
+            border-color: rgba(161, 138, 255, .65);
+            box-shadow: 0 0 0 1px rgba(128, 87, 255, .12), 0 25px 70px rgba(80, 51, 180, .15);
+        }
+
+        .popular-label {
+            display: inline-flex;
+            padding: 6px 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            color: #e9e2ff;
+            background: rgba(128, 87, 255, .18);
+            border: 1px solid rgba(161, 138, 255, .25);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .price-card h3 {
+            font-size: 20px;
+            margin-bottom: 9px;
+        }
+
+        .price-card>p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            min-height: 45px;
+        }
+
+        .price {
+            margin: 22px 0;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -1.8px;
+        }
+
+        .price small {
+            color: var(--muted);
+            font-family: "DM Sans", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .price-card .btn {
+            width: 100%;
+            margin-bottom: 23px;
+        }
+
+        .price-features {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .price-features li {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            color: #c3c8e0;
+            font-size: 12px;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: var(--teal);
+            font-weight: 800;
+        }
+
+        /* Testimonials */
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .quote-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, #1b1f35, #121525);
+        }
+
+        .quote-stars {
+            color: #f4ce75;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 17px;
+        }
+
+        .quote-card blockquote {
+            color: #dfe1f2;
+            font-size: 13px;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .quote-author {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7851ff, #e66bd1);
+            color: white;
+            font-weight: 800;
+            font-size: 12px;
+        }
+
+        .quote-author strong {
+            display: block;
+            font-size: 12px;
+        }
+
+        .quote-author span {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        /* FAQ */
+
+        .faq-wrap {
+            max-width: 800px;
+            margin-inline: auto;
+        }
+
+        .faq-wrap .section-heading {
+            text-align: center;
+            margin-inline: auto;
+        }
+
+        .faq-wrap .eyebrow {
+            justify-content: center;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .faq-list details {
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: #15182a;
+            overflow: hidden;
+        }
+
+        .faq-list summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 19px 21px;
+            list-style: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .faq-list summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-list summary::after {
+            content: "+";
+            color: var(--purple-light);
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .faq-list details[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 21px 20px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* Contact */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-copy>p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: rgba(128, 87, 255, .13);
+            color: var(--purple-light);
+            font-size: 17px;
+        }
+
+        .contact-detail strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+
+        .contact-detail span {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .form-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 23px;
+            background: linear-gradient(145deg, #1b1f35, #121525);
+        }
+
+        .form-card h3 {
+            font-size: 23px;
+            margin-bottom: 7px;
+        }
+
+        .form-card>p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 17px;
+        }
+
+        .field {
+            display: grid;
+            gap: 7px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            color: #d9dcf0;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            min-height: 45px;
+            padding: 11px 13px;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            background: #101324;
+            color: var(--text);
+            outline: none;
+            font-size: 12px;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .field textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder {
+            color: #858ba9;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: var(--purple-light);
+            box-shadow: 0 0 0 3px rgba(128, 87, 255, .12);
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 19px;
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 13px;
+            border: 1px solid rgba(99, 228, 196, .25);
+            border-radius: 11px;
+            background: rgba(99, 228, 196, .08);
+            color: var(--teal);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        /* Call to action */
+
+        .cta-section {
+            padding: 25px 0 100px;
+        }
+
+        .cta-panel {
+            position: relative;
+            overflow: hidden;
+            padding: 58px 40px;
+            text-align: center;
+            border: 1px solid rgba(179, 158, 255, .22);
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(255, 127, 145, .13), transparent 30%),
+                radial-gradient(circle at 90% 90%, rgba(99, 228, 196, .1), transparent 30%),
+                linear-gradient(120deg, #201a3d, #171a30 60%, #1c1936);
+        }
+
+        .cta-panel h2 {
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+
+        .cta-panel p {
+            max-width: 580px;
+            margin: 0 auto 25px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* Footer */
+
+        .footer {
+            padding: 45px 0 25px;
+            background: #0a0c16;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 35px;
+            padding-bottom: 32px;
+        }
+
+        .footer-brand {
+            max-width: 330px;
+        }
+
+        .footer-brand p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+            margin-top: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .footer-links a:hover {
+            color: var(--purple-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+            color: #8187a5;
+            font-size: 11px;
+        }
+
+        /* Colorful Creator Credit in Footer */
+        .creator-credit {
+            text-align: center;
+            padding: 30px 20px 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(167, 139, 250, 0.3);
+        }
+
+        .creator-label {
+            display: block;
+            color: #c4b5fd;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .creator-credit h2 {
+            margin: 0;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #a78bfa, #f0abfc, #67e8f9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .creator-credit h2 span {
+            color: #f0abfc;
+            -webkit-text-fill-color: #f0abfc;
+        }
+
+        .creator-credit p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 50;
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(26, 29, 49, .92);
+            color: var(--text);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: opacity .2s ease, transform .2s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .toast {
+            position: fixed;
+            z-index: 200;
+            left: 50%;
+            bottom: 25px;
+            max-width: calc(100% - 32px);
+            padding: 13px 18px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: #20243a;
+            color: var(--text);
+            box-shadow: var(--shadow);
+            font-size: 12px;
+            transform: translate(-50%, 20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .25s ease;
+        }
+
+        .toast.visible {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
+        /* Reveal animations */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Responsive */
+
+        @media (max-width: 1000px) {
+            .hero-grid {
+                gap: 28px;
+            }
+
+            .hero h1 {
+                font-size: clamp(43px, 6vw, 65px);
+            }
+
+            .course-grid,
+            .teacher-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                gap: 14px;
+            }
+
+            .price-card {
+                padding: 22px;
+            }
+
+            .about-grid {
+                gap: 38px;
+            }
+
+            .chip-top {
+                right: -3px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: min(100% - 36px, var(--max-width));
+            }
+
+            .section {
+                padding: 72px 0;
+            }
+
+            .nav-inner {
+                min-height: 66px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .navlinks {
+                display: none;
+                position: absolute;
+                left: 18px;
+                right: 18px;
+                top: 75px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px;
+                background: #15182a;
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                box-shadow: var(--shadow);
+            }
+
+            .navlinks.open {
+                display: flex;
+            }
+
+            .navlinks a {
+                padding: 12px 13px;
+                border-radius: 9px;
+            }
+
+            .navlinks a:hover {
+                background: var(--surface-hover);
+            }
+
+            .hero {
+                padding-top: 58px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .hero .eyebrow {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                margin-inline: auto;
+                font-size: clamp(44px, 10vw, 66px);
+            }
+
+            .hero-description {
+                margin-inline: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-note {
+                justify-content: center;
+                text-align: left;
+            }
+
+            .hero-visual {
+                min-height: 365px;
+                margin-top: 5px;
+            }
+
+            .study-card {
+                width: min(82%, 325px);
+            }
+
+            .chip-top {
+                right: 0;
+                top: 28px;
+            }
+
+            .chip-bottom {
+                left: 0;
+                bottom: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: 0;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .section-topline {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .course-grid,
+            .teacher-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-art {
+                min-height: 350px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card>p {
+                min-height: 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                width: calc(100% - 30px);
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding-top: 46px;
+            }
+
+            .hero h1 {
+                font-size: clamp(39px, 10vw, 52px);
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-visual {
+                min-height: 330px;
+            }
+
+            .study-card {
+                padding: 22px 19px;
+            }
+
+            .chip-top {
+                top: 12px;
+            }
+
+            .chip-bottom {
+                bottom: 10px;
+            }
+
+            .floating-chip {
+                padding: 10px 12px;
+            }
+
+            .floating-chip strong {
+                font-size: 10px;
+            }
+
+            .floating-chip span {
+                font-size: 9px;
+            }
+
+            .course-grid,
+            .teacher-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-art {
+                height: 150px;
+            }
+
+            .course-content>p {
+                min-height: 0;
+            }
+
+            .course-tools {
+                align-items: stretch;
+            }
+
+            .course-search {
+                width: 100%;
+            }
+
+            .filter {
+                flex: 1;
+            }
+
+            .about-art {
+                min-height: 310px;
+            }
+
+            .about-center {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
+
+            .about-art::before {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-art::after {
+                width: 185px;
+                height: 185px;
+            }
+
+            .orbit-chip {
+                padding: 9px 11px;
+                font-size: 10px;
+            }
+
+            .orbit-one {
+                top: 40px;
+                left: 13px;
+            }
+
+            .orbit-two {
+                right: 10px;
+                top: 110px;
+            }
+
+            .orbit-three {
+                bottom: 36px;
+                left: 15px;
+            }
+
+            .form-card {
+                padding: 21px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .cta-panel {
+                padding: 42px 22px;
+            }
+
+            .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav-inner">
+            <a href="#home" class="brand" aria-label="BrightPath Academy home">
+                <span class="brand-symbol">✦</span>
+                brightpath<span class="brand-dot">.</span>
+            </a>
+
+            <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+                <a href="#home" class="active">Home</a>
+                <a href="#courses">Courses</a>
+                <a href="#about">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#teachers">Teachers</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <a class="btn btn-primary nav-cta" href="#contact">Book a free class ↗</a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="navlinks">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="eyebrow">Your next chapter starts here</div>
+
+                    <h1>
+                        <span class="line">Big goals.</span>
+                        <span class="line gradient-text">Brighter futures.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Live online coaching that makes tough topics click. Learn from inspiring teachers, get a plan
+                        that fits you, and watch your confidence grow.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#courses" class="btn btn-primary">Explore courses ↗</a>
+                        <a href="#how-it-works" class="btn btn-secondary">How it works →</a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="hero-note-symbol">✦</span>
+                        <div>
+                            <strong>Learn at your pace</strong>
+                            Small batches. Personal attention.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-label="Illustration of a student's learning progress">
+                    <div class="glow-orb"></div>
+
+                    <div class="study-card">
+                        <div class="card-kicker">Your learning space</div>
+                        <h3>Weekly progress</h3>
+
+                        <div class="subject-row">
+                            <strong>✎ Mathematics mastery</strong>
+                        </div>
+                        <div class="subject-subtitle">Unit 04 · Functions</div>
+
+                        <div class="progress-meta">
+                            <span>Course progress</span>
+                            <strong>76%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill"></div>
+                        </div>
+
+                        <div class="chart" aria-label="Illustrative weekly learning activity">
+                            <div class="chart-bar" style="--height: 36%"></div>
+                            <div class="chart-bar" style="--height: 51%"></div>
+                            <div class="chart-bar" style="--height: 45%"></div>
+                            <div class="chart-bar" style="--height: 72%"></div>
+                            <div class="chart-bar" style="--height: 66%"></div>
+                            <div class="chart-bar" style="--height: 88%"></div>
+                            <div class="chart-bar" style="--height: 100%"></div>
+                        </div>
+
+                        <div class="card-foot">Illustrative progress · +24% this month</div>
+                    </div>
+
+                    <div class="floating-chip chip-top">
+                        <div>
+                            <strong>✦ Live learning</strong>
+                            <span>Ask questions, get answers</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-chip chip-bottom">
+                        <span style="font-size: 19px">🌱</span>
+                        <div>
+                            <strong>Small steps, big wins</strong>
+                            <span>Every lesson moves you forward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Academy highlights">
+            <div class="container stats-grid">
+                <div class="stat">
+                    <strong>1:1</strong>
+                    <span>Personal attention</span>
+                </div>
+                <div class="stat">
+                    <strong>Live</strong>
+                    <span>Interactive classes</span>
+                </div>
+                <div class="stat">
+                    <strong>Anytime</strong>
+                    <span>Learn at your pace</span>
+                </div>
+                <div class="stat">
+                    <strong>All in</strong>
+                    <span>One learning space</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section courses" id="courses">
+            <div class="container">
+                <div class="section-topline">
+                    <div class="section-heading reveal">
+                        <div class="eyebrow">Find your learning path</div>
+                        <h2>Big dreams need <span class="gradient-text">the right lessons.</span></h2>
+                        <p>Explore flexible learning options designed to make challenging topics feel simpler and
+                            progress feel achievable.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-secondary">Get course advice ↗</a>
+                </div>
+
+                <div class="course-tools reveal">
+                    <input class="course-search" id="courseSearch" type="search" placeholder="Search courses..."
+                        aria-label="Search courses" />
+                    <button class="filter active" data-filter="all" aria-pressed="true">All courses</button>
+                    <button class="filter" data-filter="school" aria-pressed="false">School</button>
+                    <button class="filter" data-filter="skills" aria-pressed="false">Skills</button>
+                    <button class="filter" data-filter="exam" aria-pressed="false">Exam prep</button>
+                </div>
+
+                <div class="course-grid" id="courseGrid">
+                    <article class="course-card reveal" data-category="school"
+                        data-search="mathematics algebra geometry functions">
+                        <div class="course-art art-math">
+                            <span class="art-symbol">∑</span>
+                            <span class="art-label">Make numbers make sense.</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span class="tag">School · Grades 6–12</span>
+                                <span class="rating">★ 4.9</span>
+                            </div>
+                            <h3>Mathematics Made Clear</h3>
+                            <p>Build strong foundations in algebra, geometry, functions, and problem-solving.</p>
+                            <div class="course-bottom">
+                                <strong>Flexible plan<span>Ask for pricing</span></strong>
+                                <a class="btn btn-secondary" href="#contact" data-course="Mathematics Made Clear">Learn
+                                    more ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card reveal" data-category="school"
+                        data-search="science physics chemistry biology experiments">
+                        <div class="course-art art-science">
+                            <span class="art-symbol">⚛</span>
+                            <span class="art-label">Curiosity changes everything.</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span class="tag">School · Grades 6–12</span>
+                                <span class="rating">★ 4.8</span>
+                            </div>
+                            <h3>Science Explorers</h3>
+                            <p>Understand physics, chemistry, and biology through clear explanations and examples.</p>
+                            <div class="course-bottom">
+                                <strong>Flexible plan<span>Ask for pricing</span></strong>
+                                <a class="btn btn-secondary" href="#contact" data-course="Science Explorers">Learn more
+                                    ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card reveal" data-category="school"
+                        data-search="english grammar writing reading language">
+                        <div class="course-art art-english">
+                            <span class="art-symbol">Aa</span>
+                            <span class="art-label">Find your words.</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span class="tag">Language</span>
+                                <span class="rating">★ 4.9</span>
+                            </div>
+                            <h3>English & Communication</h3>
+                            <p>Improve grammar, reading comprehension, writing, and everyday communication.</p>
+                            <div class="course-bottom">
+                                <strong>Flexible plan<span>Ask for pricing</span></strong>
+                                <a class="btn btn-secondary" href="#contact" data-course="English & Communication">Learn
+                                    more ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card reveal" data-category="skills"
+                        data-search="coding programming python web development computers">
+                        <div class="course-art art-coding">
+                            <span class="art-symbol">{ }</span>
+                            <span class="art-label">Turn ideas into code.</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span class="tag">Digital skills</span>
+                                <span class="rating">★ 4.9</span>
+                            </div>
+                            <h3>Coding for Beginners</h3>
+                            <p>Discover programming fundamentals and start building confidence with practical projects.
+                            </p>
+                            <div class="course-bottom">
+                                <strong>Flexible plan<span>Ask for pricing</span></strong>
+                                <a class="btn btn-secondary" href="#contact" data-course="Coding for Beginners">Learn
+                                    more ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card reveal" data-category="exam"
+                        data-search="exam preparation revision test strategy practice">
+                        <div class="course-art art-exam">
+                            <span class="art-symbol">✓</span>
+                            <span class="art-label">Prepare with purpose.</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span class="tag">Exam preparation</span>
+                                <span class="rating">★ 4.8</span>
+                            </div>
+                            <h3>Exam Confidence</h3>
+                            <p>Organize revision, practice exam-style questions, and develop a realistic study plan.</p>
+                            <div class="course-bottom">
+                                <strong>Flexible plan<span>Ask for pricing</span></strong>
+                                <a class="btn btn-secondary" href="#contact" data-course="Exam Confidence">Learn more
+                                    ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card reveal" data-category="skills"
+                        data-search="creative thinking study habits learning productivity">
+                        <div class="course-art art-creative">
+                            <span class="art-symbol">✳</span>
+                            <span class="art-label">Make learning your own.</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <span class="tag">Personal growth</span>
+                                <span class="rating">★ 4.8</span>
+                            </div>
+                            <h3>Study Smarter</h3>
+                            <p>Build better study habits, manage your time, and learn how to approach tough tasks.</p>
+                            <div class="course-bottom">
+                                <strong>Flexible plan<span>Ask for pricing</span></strong>
+                                <a class="btn btn-secondary" href="#contact" data-course="Study Smarter">Learn more
+                                    ↗</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="empty-state" id="emptyState">No courses match your search. Try a different keyword or
+                    category.</p>
+            </div>
+        </section>
+
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div class="eyebrow">A simpler way to learn</div>
+                    <h2>Three steps. <span class="gradient-text">A whole new mindset.</span></h2>
+                    <p>No overwhelming schedules or one-size-fits-all plans. Start with your goals, then build momentum
+                        one lesson at a time.</p>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card reveal">
+                        <div class="process-number">01</div>
+                        <h3>Tell us your goals</h3>
+                        <p>Share the subjects you want to improve, what feels difficult, and what success looks like for
+                            you.</p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <div class="process-number">02</div>
+                        <h3>Meet your learning plan</h3>
+                        <p>Explore suitable classes and a learning approach built around your needs, schedule, and pace.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <div class="process-number">03</div>
+                        <h3>Grow with every lesson</h3>
+                        <p>Ask questions, practice concepts, revisit tricky topics, and celebrate your progress along
+                            the way.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-art reveal" aria-label="Illustration representing connected learning">
+                    <div class="about-center">✦</div>
+                    <div class="orbit-chip orbit-one">🎯 Clear goals</div>
+                    <div class="orbit-chip orbit-two">💡 New ideas</div>
+                    <div class="orbit-chip orbit-three">🌱 Real progress</div>
+                </div>
+
+                <div class="about-copy reveal">
+                    <div class="eyebrow">Learning that gets you</div>
+                    <h2>Education should feel like <span class="gradient-text">a possibility.</span></h2>
+                    <p>
+                        BrightPath is built around a simple idea: every learner deserves a supportive place to ask
+                        questions, explore new ideas, and build confidence. We aim to make online learning personal,
+                        practical, and easier to fit into everyday life.
+                    </p>
+
+                    <ul class="check-list">
+                        <li><span class="check">✓</span><span>Clear explanations that break complex topics into
+                                manageable steps.</span></li>
+                        <li><span class="check">✓</span><span>Interactive lessons that leave room for questions and
+                                discussion.</span></li>
+                        <li><span class="check">✓</span><span>Flexible learning paths based on individual goals and
+                                progress.</span></li>
+                        <li><span class="check">✓</span><span>A supportive environment where mistakes become part of
+                                learning.</span></li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary">Let's find your path ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="teachers">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div class="eyebrow">People who make a difference</div>
+                    <h2>Meet your future <span class="gradient-text">learning partners.</span></h2>
+                    <p>Great teaching combines subject knowledge, patience, and the ability to explain a difficult idea
+                        in a fresh way.</p>
+                </div>
+
+                <div class="teacher-grid">
+                    <article class="teacher-card reveal">
+                        <div class="teacher-photo">
+                            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=700&q=85"
+                                alt="Educator standing in a bright learning space" loading="lazy" />
+                        </div>
+                        <div class="teacher-info">
+                            <h3>Mathematics Mentor</h3>
+                            <p>Concepts, logic, and problem-solving</p>
+                            <div class="teacher-subjects">
+                                <span>Algebra</span><span>Geometry</span><span>Functions</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="teacher-card reveal">
+                        <div class="teacher-photo">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=85"
+                                alt="Educators collaborating around a table" loading="lazy" />
+                        </div>
+                        <div class="teacher-info">
+                            <h3>Science Mentor</h3>
+                            <p>Curiosity, discovery, and clear explanations</p>
+                            <div class="teacher-subjects">
+                                <span>Physics</span><span>Chemistry</span><span>Biology</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="teacher-card reveal">
+                        <div class="teacher-photo">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=700&q=85"
+                                alt="Educator smiling in a professional learning environment" loading="lazy" />
+                        </div>
+                        <div class="teacher-info">
+                            <h3>Language Mentor</h3>
+                            <p>Communication, expression, and confidence</p>
+                            <div class="teacher-subjects">
+                                <span>English</span><span>Writing</span><span>Reading</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <p style="margin-top:16px;color:var(--muted);font-size:11px;">Illustrative educator imagery. Contact the
+                    academy to learn about current teacher availability.</p>
+            </div>
+        </section>
+
+        <section class="section pricing" id="pricing">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div class="eyebrow">Flexible learning options</div>
+                    <h2>A plan that fits <span class="gradient-text">your next step.</span></h2>
+                    <p>Choose a starting point and discuss the right schedule, subjects, and fees with the BrightPath
+                        team.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <article class="price-card reveal">
+                        <h3>Starter</h3>
+                        <p>For learners who want help building strong foundations in a subject.</p>
+                        <div class="price">Custom <small>/ plan</small></div>
+                        <a href="#contact" class="btn btn-secondary" data-plan="Starter">Discuss this plan</a>
+                        <ul class="price-features">
+                            <li>Personal learning goals</li>
+                            <li>Subject-focused sessions</li>
+                            <li>Practice and revision guidance</li>
+                            <li>Flexible schedule discussion</li>
+                        </ul>
+                    </article>
+
+                    <article class="price-card featured reveal">
+                        <span class="popular-label">A great place to start</span>
+                        <h3>Growth</h3>
+                        <p>For learners looking for consistent support and a structured learning routine.</p>
+                        <div class="price">Custom <small>/ plan</small></div>
+                        <a href="#contact" class="btn btn-primary" data-plan="Growth">Discuss this plan ↗</a>
+                        <ul class="price-features">
+                            <li>Personalized learning path</li>
+                            <li>Regular live learning sessions</li>
+                            <li>Progress and goal reviews</li>
+                            <li>Guided practice between classes</li>
+                        </ul>
+                    </article>
+
+                    <article class="price-card reveal">
+                        <h3>Focused</h3>
+                        <p>For learners preparing for an important test or working toward a specific goal.</p>
+                        <div class="price">Custom <small>/ plan</small></div>
+                        <a href="#contact" class="btn btn-secondary" data-plan="Focused">Discuss this plan</a>
+                        <ul class="price-features">
+                            <li>Goal-specific preparation</li>
+                            <li>Revision and practice strategy</li>
+                            <li>Focus on challenging topics</li>
+                            <li>Schedule based on availability</li>
+                        </ul>
+                    </article>
+                </div>
+                <p style="margin-top:20px;color:var(--muted);font-size:11px;">These are sample plan descriptions, not
+                    published offers. Final fees, lesson frequency, and availability must be confirmed with the academy.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="testimonials">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div class="eyebrow">What great learning feels like</div>
+                    <h2>Confidence grows <span class="gradient-text">one step at a time.</span></h2>
+                    <p>A supportive learning experience helps students feel more comfortable asking questions and
+                        working through challenges.</p>
+                </div>
+
+                <div class="testimonial-grid">
+                    <article class="quote-card reveal">
+                        <div class="quote-stars" aria-label="Five stars">★★★★★</div>
+                        <blockquote>“The best learning environment is one where I can ask questions freely and take time
+                            to understand a topic.”</blockquote>
+                        <div class="quote-author">
+                            <div class="avatar">S</div>
+                            <div><strong>Student perspective</strong><span>Illustrative example</span></div>
+                        </div>
+                    </article>
+
+                    <article class="quote-card reveal">
+                        <div class="quote-stars" aria-label="Five stars">★★★★★</div>
+                        <blockquote>“A clear study plan makes it easier to organize revision, identify difficult topics,
+                            and stay consistent.”</blockquote>
+                        <div class="quote-author">
+                            <div class="avatar">P</div>
+                            <div><strong>Parent perspective</strong><span>Illustrative example</span></div>
+                        </div>
+                    </article>
+
+                    <article class="quote-card reveal">
+                        <div class="quote-stars" aria-label="Five stars">★★★★★</div>
+                        <blockquote>“Breaking a complicated idea into smaller steps can make learning less stressful and
+                            more enjoyable.”</blockquote>
+                        <div class="quote-author">
+                            <div class="avatar">L</div>
+                            <div><strong>Learner perspective</strong><span>Illustrative example</span></div>
+                        </div>
+                    </article>
+                </div>
+                <p style="margin-top:16px;color:var(--muted);font-size:11px;">The quotes above are illustrative website
+                    copy, not verified customer testimonials.</p>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container faq-wrap">
+                <div class="section-heading reveal">
+                    <div class="eyebrow">Good questions welcome</div>
+                    <h2>Things you might <span class="gradient-text">want to know.</span></h2>
+                    <p>Here are a few useful details to consider before starting online coaching.</p>
+                </div>
+
+                <div class="faq-list reveal">
+                    <details>
+                        <summary>How do online classes work?</summary>
+                        <div class="faq-answer">Online classes typically take place through a video meeting platform.
+                            The teacher explains concepts, answers questions, and guides practice. The exact platform
+                            and schedule should be confirmed when booking.</div>
+                    </details>
+
+                    <details>
+                        <summary>Can I choose the subject I need help with?</summary>
+                        <div class="faq-answer">Yes. Use the enquiry form to tell us which subject, grade, or skill you
+                            want to work on. The team can then discuss suitable learning options and current
+                            availability.</div>
+                    </details>
+
+                    <details>
+                        <summary>Do I need to be an advanced learner?</summary>
+                        <div class="faq-answer">No. You can describe your current level and the topics you find
+                            difficult. A learning plan can start with foundational concepts and progress at a
+                            comfortable pace.</div>
+                    </details>
+
+                    <details>
+                        <summary>How much do classes cost?</summary>
+                        <div class="faq-answer">Fees depend on the subject, lesson frequency, session format, and
+                            learning goals. Submit an enquiry to request the current fee structure before making a
+                            payment.</div>
+                    </details>
+
+                    <details>
+                        <summary>How do I book a free class?</summary>
+                        <div class="faq-answer">Complete the enquiry form below with your contact details and preferred
+                            subject. The form on this demo page displays a confirmation locally; it does not send
+                            information to an academy until a backend or form service is connected.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-copy reveal">
+                    <div class="eyebrow">Your next step starts here</div>
+                    <h2>Let's find the <span class="gradient-text">right path for you.</span></h2>
+                    <p>Tell us what you want to learn. Start a conversation about available subjects, teaching options,
+                        schedules, and fees.</p>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">✉</div>
+                        <div>
+                            <strong>Email</strong>
+                            <span>Connect your official academy email here</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">◷</div>
+                        <div>
+                            <strong>Flexible scheduling</strong>
+                            <span>Discuss times that suit your routine</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon">↗</div>
+                        <div>
+                            <strong>Personalized guidance</strong>
+                            <span>Start with your learning goals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card reveal">
+                    <h3>Book a free class</h3>
+                    <p>Share a few details and we'll help you explore your options.</p>
+
+                    <form id="bookingForm">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="studentName">Your name</label>
+                                <input id="studentName" name="name" type="text" placeholder="Enter your name"
+                                    autocomplete="name" required />
+                            </div>
+
+                            <div class="field">
+                                <label for="studentEmail">Email address</label>
+                                <input id="studentEmail" name="email" type="email" placeholder="you@example.com"
+                                    autocomplete="email" required />
+                            </div>
+
+                            <div class="field">
+                                <label for="studentPhone">Phone number</label>
+                                <input id="studentPhone" name="phone" type="tel" placeholder="Your contact number"
+                                    autocomplete="tel" />
+                            </div>
+
+                            <div class="field">
+                                <label for="studentGrade">Grade / level</label>
+                                <select id="studentGrade" name="grade" required>
+                                    <option value="">Choose your level</option>
+                                    <option>Grades 1–5</option>
+                                    <option>Grades 6–8</option>
+                                    <option>Grades 9–10</option>
+                                    <option>Grades 11–12</option>
+                                    <option>College</option>
+                                    <option>Adult learner</option>
+                                </select>
+                            </div>
+
+                            <div class="field full">
+                                <label for="studentCourse">Subject of interest</label>
+                                <select id="studentCourse" name="course" required>
+                                    <option value="">Choose a subject</option>
+                                    <option>Mathematics Made Clear</option>
+                                    <option>Science Explorers</option>
+                                    <option>English & Communication</option>
+                                    <option>Coding for Beginners</option>
+                                    <option>Exam Confidence</option>
+                                    <option>Study Smarter</option>
+                                    <option>I'm not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="field full">
+                                <label for="studentMessage">What would you like help with? (Optional)</label>
+                                <textarea id="studentMessage" name="message"
+                                    placeholder="Tell us about your goals or the topics you find challenging..."></textarea>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary form-submit" type="submit">Request a free class ↗</button>
+                        <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-panel reveal">
+                    <div class="eyebrow">A brighter path begins with one step</div>
+                    <h2>Ready to see what <span class="gradient-text">you can do?</span></h2>
+                    <p>Start with a conversation about your goals. You don't need all the answers before you begin.</p>
+                    <a href="#contact" class="btn btn-primary">Let's get started ↗</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="brand">
+                        <span class="brand-symbol">✦</span>
+                        brightpath<span class="brand-dot">.</span>
+                    </a>
+                    <p>Personalized online learning designed to make tough topics click and help every learner move
+                        forward with confidence.</p>
+                </div>
+
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#courses">Courses</a>
+                    <a href="#about">About</a>
+                    <a href="#teachers">Teachers</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© <span id="currentYear"></span> BrightPath Academy. All rights reserved.</span>
+                <span>Made for curious minds ✦</span>
+            </div>
+            <!-- Creator Credit -->
+            <div class="creator-credit">
+                <span class="creator-label">DESIGNED & DEVELOPED BY</span>
+                <h2>Abhinash Rai <span>✦</span></h2>
+                <p>Turning ideas into digital experiences.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 14 6-6 6 6" />
+        </svg>
+    </button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        "use strict";
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navlinks = document.getElementById("navlinks");
+        const navAnchors = document.querySelectorAll(".navlinks a");
+        const backToTop = document.getElementById("backToTop");
+        const toast = document.getElementById("toast");
+        const courseSearch = document.getElementById("courseSearch");
+        const courseCards = [...document.querySelectorAll(".course-card")];
+        const filterButtons = [...document.querySelectorAll(".filter")];
+        const emptyState = document.getElementById("emptyState");
+        const bookingForm = document.getElementById("bookingForm");
+        const formMessage = document.getElementById("formMessage");
+
+        let activeFilter = "all";
+        let toastTimer;
+
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add("visible");
+
+            window.clearTimeout(toastTimer);
+            toastTimer = window.setTimeout(() => {
+                toast.classList.remove("visible");
+            }, 3000);
+        }
+
+        function closeMobileMenu() {
+            navlinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation menu");
+        }
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navlinks.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+        });
+
+        navAnchors.forEach((link) => {
+            link.addEventListener("click", () => {
+                closeMobileMenu();
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (
+                navlinks.classList.contains("open") &&
+                !navlinks.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                closeMobileMenu();
+            }
+        });
+
+        function filterCourses() {
+            const query = courseSearch.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            courseCards.forEach((card) => {
+                const category = card.dataset.category || "";
+                const searchText = (
+                    (card.dataset.search || "") + " " + card.textContent
+                ).toLowerCase();
+
+                const matchesCategory =
+                    activeFilter === "all" || category === activeFilter;
+                const matchesSearch = !query || searchText.includes(query);
+                const visible = matchesCategory && matchesSearch;
+
+                card.style.display = visible ? "" : "none";
+
+                if (visible) visibleCount++;
+            });
+
+            emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                activeFilter = button.dataset.filter;
+
+                filterButtons.forEach((item) => {
+                    const active = item === button;
+                    item.classList.toggle("active", active);
+                    item.setAttribute("aria-pressed", String(active));
+                });
+
+                filterCourses();
+            });
+        });
+
+        courseSearch.addEventListener("input", filterCourses);
+
+        document.querySelectorAll("[data-course]").forEach((link) => {
+            link.addEventListener("click", () => {
+                const course = link.dataset.course;
+                const courseSelect = document.getElementById("studentCourse");
+                const matchingOption = [...courseSelect.options].find(
+                    (option) => option.value === course || option.textContent.trim() === course
+                );
+
+                if (matchingOption) courseSelect.value = matchingOption.value;
+            });
+        });
+
+        document.querySelectorAll("[data-plan]").forEach((link) => {
+            link.addEventListener("click", () => {
+                const message = document.getElementById("studentMessage");
+                message.value = "I'm interested in the " + link.dataset.plan + " plan.";
+            });
+        });
+
+        bookingForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            if (!bookingForm.reportValidity()) return;
+
+            const name = document.getElementById("studentName").value.trim();
+            const course = document.getElementById("studentCourse").value;
+
+            formMessage.textContent =
+                "Thanks, " + name + "! Your enquiry for " + course +
+                " has been prepared in this demo. No data has been sent. Connect a backend or form service to receive real bookings.";
+
+            formMessage.classList.add("show");
+            showToast("Demo enquiry prepared successfully.");
+        });
+
+        window.addEventListener("scroll", () => {
+            backToTop.classList.toggle("visible", window.scrollY > 450);
+        }, { passive: true });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach((element) => revealObserver.observe(element));
+        } else {
+            revealElements.forEach((element) => element.classList.add("is-visible"));
+        }
+
+        const sectionElements = document.querySelectorAll("main section[id]");
+        if ("IntersectionObserver" in window) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+
+                    navAnchors.forEach((link) => {
+                        const isActive = link.getAttribute("href") === "#" + entry.target.id;
+                        link.classList.toggle("active", isActive);
+                    });
+                });
+            }, {
+                rootMargin: "-30% 0px -60% 0px",
+                threshold: 0
+            });
+
+            sectionElements.forEach((section) => sectionObserver.observe(section));
+        }
+    </script>
+</body>
+
+</html>
