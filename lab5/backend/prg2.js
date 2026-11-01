@@ -10,6 +10,7 @@ const dirname = path.dirname(filename)
 
 app.get("/",(req, res)=> {
     res.sendFile(path.join(dirname,'pages','product.html'));
+    
 });
 
 app.listen(4444, () => {
