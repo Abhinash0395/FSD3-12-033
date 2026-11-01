@@ -56,6 +56,7 @@ const deleteFile = async (filename) => {
   }
 };
 const data = await readData("file1.js");
+
 console.log(data);
 
 // NOTE : if a function uses await keyword thenthe function must be async
